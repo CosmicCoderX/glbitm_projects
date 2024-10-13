@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Daily Fitness Routine for Beginners- Start Strong, Stay Strong</title>
+  <link rel="icon" href="/assets/main_favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">FitStart</div>
+      <ul class="nav-links">
+        <li><a href="#workouts">Workouts</a></li>
+        <li><a href="#tips">Fitness Tips</a></li>
+        <li><a href="#chatbot">Chat with Fit Buddy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+<section class="hero">
+  <video autoplay muted loop class="hero-video">
+    <source src="/assets/bg_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h1>Start Your Fitness Journey Today!</h1>
+    <p>Daily routines designed for beginners. No equipment needed.</p>
+    <button class="cta-btn">Get Started</button>
+  </div>
+</section>
+
+<!-- Workout Section -->
+<section id="workouts" class="workouts">
+  <h2>Daily Workouts for Beginners</h2>
+
+  <div class="workout-cards">
+      <!-- Workout Card 1 -->
+      <div class="workout-card">
+          <img src="/assets/fullBodyworkout_img.jpg" alt="Full Body Workout">
+          <h3>Full Body Workout</h3>
+          <p>Strengthens all major muscle groups. Perfect for fat-burning and toning.</p>
+          <span class="workout-info">Difficulty: <strong>Beginner</strong> | Time: <strong>20 min</strong></span>
+          <button class="start-btn" onclick="playVideo('full-body-video')">Start Workout</button>
+          
+          <!-- Placeholder for video -->
+          <div id="full-body-video" class="video-container">
+              <video controls>
+                  <source src="/assets/full_body_workout_video.mp4" type="video/mp4"> <!-- Add your video link here -->
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+          
+          <!-- User Reviews -->
+          <div class="review-section">
+              <h4>User Reviews:</h4>
+              <p>"Quick but effective! Perfect for busy days." - Sarah</p>
+          </div>
+      </div>
+
+      <!-- Workout Card 2 -->
+      <div class="workout-card">
+          <img src="/assets/coreAbs_img.jpg" alt="Core and Abs">
+          <h3>Core and Abs</h3>
+          <p>Targets your core muscles for better balance and stability.</p>
+          <span class="workout-info">Difficulty: <strong>Intermediate</strong> | Time: <strong>15 min</strong></span>
+          <button class="start-btn" onclick="playVideo('core-abs-video')">Start Workout</button>
+          
+          <div id="core-abs-video" class="video-container">
+              <video controls>
+                  <source src="/assets/core_abs_video.mp4" type="video/mp4"> <!-- Add your video link here -->
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+
+          <div class="review-section">
+              <h4>User Reviews:</h4>
+              <p>"Felt the burn! Great for strengthening the core." - John</p>
+          </div>
+      </div>
+
+      <!-- Workout Card 3 -->
+      <div class="workout-card">
+          <img src="/assets/cardioBlast_img.jpg" alt="Cardio Blast">
+          <h3>Cardio Blast</h3>
+          <p>Burn calories fast with this 25-minute high-energy session.</p>
+          <span class="workout-info">Difficulty: <strong>Advanced</strong> | Time: <strong>25 min</strong></span>
+          <button class="start-btn" onclick="playVideo('cardio-blast-video')">Start Workout</button>
+          
+          <div id="cardio-blast-video" class="video-container">
+              <video controls>
+                  <source src="/assets/cardio_blast_video.mp4" type="video/mp4"> <!-- Add your video link here -->
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+
+          <div class="review-section">
+              <h4>User Reviews:</h4>
+              <p>"Intense but worth it! Definitely a sweat-buster." - Emma</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+ <!-- Fitness Tips Section  -->
+<section id="tips" class="fitness-tips">
+  <h2>Fitness Tips for Beginners</h2>
+  <div class="tips-cards">
+      <!-- Tip Card 1 -->
+      <div class="tip-card">
+          <h3>How to Warm Up Properly</h3>
+          <p>A proper warm-up is essential for injury prevention. Spend 5-10 minutes doing light aerobic exercises like jogging or dynamic stretches to prepare your body for a workout.</p>
+          <ul>
+              <li>Start with 5 minutes of light cardio.</li>
+              <li>Incorporate dynamic stretches like arm circles and leg swings.</li>
+              <li>Focus on major muscle groups you will be using.</li>
+          </ul>
+      </div>
+      
+      <!-- Tip Card 2 -->
+      <div class="tip-card">
+          <h3>Best Nutrition Tips</h3>
+          <p>Eating right fuels your workouts and aids recovery. Incorporate a balanced diet rich in whole foods, protein, healthy fats, and complex carbohydrates.</p>
+          <ul>
+              <li>Prioritize lean proteins (chicken, fish, tofu).</li>
+              <li>Include plenty of fruits and vegetables for vitamins and minerals.</li>
+              <li>Stay hydrated; drink water before, during, and after workouts.</li>
+          </ul>
+      </div>
+      
+      <!-- Tip Card 3 -->
+      <div class="tip-card">
+          <h3>Stretching After Workouts</h3>
+          <p>Stretching helps improve flexibility and aids recovery. Spend 5-10 minutes stretching your muscles after every workout session to prevent soreness and injury.</p>
+          <ul>
+              <li>Hold each stretch for 20-30 seconds.</li>
+              <li>Focus on all major muscle groups, especially those you worked.</li>
+              <li>Consider incorporating yoga for additional flexibility benefits.</li>
+          </ul>
+      </div>
+
+      <!-- Tip Card 4 -->
+      <div class="tip-card">
+          <h3>Listen to Your Body</h3>
+          <p>Pay attention to how your body feels during workouts. Rest when needed and adjust your routine based on your energy levels and comfort.</p>
+          <ul>
+              <li>Take rest days to allow muscles to recover.</li>
+              <li>Modify exercises if you experience pain or discomfort.</li>
+              <li>Consider consulting a trainer for personalized guidance.</li>
+          </ul>
+      </div>
+
+      <!-- Tip Card 5 -->
+      <div class="tip-card">
+          <h3>Set Realistic Goals</h3>
+          <p>Establish achievable fitness goals to stay motivated. Break larger goals into smaller, measurable milestones to track your progress effectively.</p>
+          <ul>
+              <li>Set specific, measurable, attainable, relevant, and time-bound (SMART) goals.</li>
+              <li>Celebrate small victories along the way.</li>
+              <li>Adjust goals as you progress to keep them challenging.</li>
+          </ul>
+      </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <h3>FitStart</h3>
+          <p>Your personal fitness assistant.</p>
+      </div>
+      <ul class="footer-links">
+          <li><a href="#workouts">Workouts</a></li>
+          <li><a href="#tips">Fitness Tips</a></li>
+          <li><a href="#chatbot">Chat with Fit Buddy</a></li>
+      </ul>
+      <div class="social-media">
+          <h4>Follow Us</h4>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 FitStart. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script> 
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/10/09/23/20241009230942-5QA0SN3V.js"></script>  
+</body>
+</html>

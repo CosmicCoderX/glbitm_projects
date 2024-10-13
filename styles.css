@@ -1,0 +1,513 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8; /* Light blue-gray background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Blue-Black Modern Navigation Bar */
+header {
+  background-color: #0D1B2A; /* Dark navy blue */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px 0;
+  position: sticky; /* Keeps navbar fixed at the top */
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Transition for smooth background changes */
+}
+
+header.scrolled {
+  background-color: rgba(13, 27, 42, 0.9); /* Dark navy blue with transparency */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 28px;
+  color: #ffffff; /* White logo */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #00A8E8; /* Light blue hover effect */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #ffffff; /* White text for links */
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.nav-links a:hover {
+  color: #00A8E8; /* Light blue hover effect */
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 168, 232, 0.2); /* Light blue background */
+  z-index: -1;
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #00A8E8; /* Light blue underline */
+  left: 50%;
+  bottom: 0;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Open Hamburger Menu */
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(5px);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 0;
+      display: none;
+  }
+
+  .nav-links.open {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 15px 0;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+}
+
+  
+ /* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.8), rgba(0, 168, 232, 0.8)); /* Blue-black gradient */
+  perspective: 1000px; /* For 3D effect */
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4); /* Darkens the video for better contrast */
+  transition: transform 0.5s ease; /* Smooth transform effect */
+}
+
+.hero-video:hover {
+  transform: scale(1.08); /* Zoom effect on hover */
+  filter: brightness(0.6); /* Slightly lighten the video on hover */
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Stronger shadow for bold text */
+  animation: slideIn 2s ease-in-out; /* Smooth sliding text animation */
+  transform: rotateY(10deg); /* Adds a slight 3D tilt to the text */
+  transform-style: preserve-3d; /* Keep the 3D transformation */
+}
+
+.cta-btn {
+  background-color: #00A8E8; /* Light blue button */
+  color: white;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 30px; /* Semi-rounded button */
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  transition: all 0.4s ease; /* Smooth transition for hover effects */
+  animation: bounceIn 2s ease; /* Button appears with bounce effect */
+}
+
+.cta-btn:hover {
+  background-color: #007EA7; /* Darker blue on hover */
+  transform: translateY(-8px) scale(1.05); /* Move up and slightly enlarge */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Larger shadow on hover */
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-100px) rotateY(10deg); }
+  100% { opacity: 1; transform: translateX(0) rotateY(10deg); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+  
+ /* Workouts Section */
+.workouts {
+  padding: 60px 20px;
+  background-color: #0D1B2A;
+  color: white;
+}
+
+.workouts h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #00A8E8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: slideIn 1.5s ease-out;
+}
+
+.workout-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.workout-card {
+  background-color: #1B263B;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.workout-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.workout-card:hover img {
+  transform: scale(1.05);
+}
+
+.workout-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.workout-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #00A8E8;
+}
+
+.workout-card p {
+  font-size: 16px;
+  color: #E0E6ED;
+}
+
+.workout-info {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #E0E6ED;
+}
+
+.start-btn {
+  background-color: #00A8E8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #007EA7;
+  transform: translateY(-5px);
+}
+
+video{
+  height: 200px;
+  width: 400px;
+}
+
+.video-container {
+  margin-top: 20px;
+  display: none; /* Hidden by default */
+  
+}
+
+.review-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.review-section h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #00A8E8;
+}
+
+.review-section p {
+  font-size: 14px;
+  color: #E0E6ED;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .workout-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .workout-card {
+      width: 80%;
+  }
+}
+
+  
+  /* Fitness Tips Section */
+.fitness-tips {
+  padding: 60px 20px;
+  background-color: #0D1B2A; /* Dark navy blue background */
+  color: white;
+}
+
+.fitness-tips h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #00A8E8; /* Light blue for section title */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  animation: slideIn 1.5s ease-out;
+}
+
+.tips-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.tip-card {
+  background-color: #1B263B; /* Darker navy for the card */
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  width: calc(30% - 30px); /* Responsive width calculation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tip-card:hover {
+  transform: translateY(-10px); /* Move card up slightly on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
+}
+
+.tip-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #00A8E8; /* Light blue for headings */
+}
+
+.tip-card p {
+  font-size: 16px;
+  color: #E0E6ED; /* Lighter text for description */
+  margin-bottom: 15px; /* Space between paragraph and list */
+}
+
+.tip-card ul {
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+  text-align: left; /* Align list to the left */
+}
+
+.tip-card ul li {
+  font-size: 14px;
+  color: #E0E6ED; /* Light text color for list items */
+  margin: 5px 0; /* Space between list items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tip-card {
+      width: 80%; /* Full width on smaller screens */
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #04090e; /* Dark navy blue */
+  color: #E0E6ED; /* Light text for contrast */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the start */
+  flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.footer-logo h3 {
+  font-size: 28px;
+  color: #00A8E8; /* Light blue */
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 16px;
+  color: #E0E6ED;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: #E0E6ED;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00A8E8; /* Light blue on hover */
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #E0E6ED;
+}
+
+.social-media a {
+  color: #E0E6ED;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #00A8E8; /* Light blue on hover */
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .footer-links {
+      margin: 20px 0;
+  }
+}
+
